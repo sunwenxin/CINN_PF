@@ -84,8 +84,6 @@ pgf_config = {
     "text.usetex": True,
     "pgf.preamble": str([
         r"\usepackage{unicode-math}",
-        #r"\setmathfont{XITS Math}", 
-        # 这里注释掉了公式的XITS字体，可以自行修改
         r"\setmainfont{Times New Roman}",
         r"\usepackage{xeCJK}",
         r"\xeCJKsetup{CJKmath=true}",
@@ -112,7 +110,7 @@ strs = []
 for j in range(n):
     strs += ["%.3f"%CS1.levels[j]+"$\sim$"+"%.3f"%CS1.levels[j+1]]
 
-ax.text(0.3, 0.9, '$\mathbf x_t=[%.3f,%.3f ]$;\n$\mathbf y_{t+1}=[%.3f,%.3f ]$.' % (x[0,0],x[0,1],y[0,0],y[0,1]),
+ax.text(0.3, 0.9, '$\mathbf x_{t-1}=[%.3f,%.3f ]$;\n$\mathbf y_{t}=[%.3f,%.3f ]$.' % (x[0,0],x[0,1],y[0,0],y[0,1]),
         horizontalalignment='left',
         verticalalignment='center',
         transform=ax.transAxes,fontsize=16)
@@ -145,8 +143,8 @@ for i in ["Original","q_EPF","q_UPF","q_IPF","q_CINN_PF"]:
     plt.legend(h1, strs,ncol=1,fontsize=9,loc='lower right' )
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
-    plt.xlabel("${\mathbf x}_{1,t+1}$",fontsize=16)
-    plt.ylabel("${\mathbf x}_{2,t+1}$",fontsize=16)
+    plt.xlabel("${\mathbf x}_{1,t}$",fontsize=16)
+    plt.ylabel("${\mathbf x}_{2,t}$",fontsize=16)
     plt.savefig("q_demo_L96\\"+i+".pdf")
 
 
