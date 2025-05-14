@@ -120,8 +120,8 @@ ax.text(0.3, 0.9, '$\mathbf x_t=[%.3f,%.3f ]$;\n$\mathbf y_{t+1}=[%.3f,%.3f ]$.'
 plt.legend(h1, strs,ncol=1,fontsize=9,loc='lower right' )
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
-plt.xlabel("${\mathbf x}_{1,t+1}$",fontsize=16)
-plt.ylabel("${\mathbf x}_{2,t+1}$",fontsize=16)
+plt.xlabel("${\mathbf x}_{1,t}$",fontsize=16)
+plt.ylabel("${\mathbf x}_{2,t}$",fontsize=16)
 plt.savefig("q_demo_L96\\optimal_q.pdf")
 
 
